@@ -4,5 +4,5 @@ public enum Outcomes
 {
     Win,
     Loss,
-    Draw,
+    Draw
 }

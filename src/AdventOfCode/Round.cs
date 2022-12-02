@@ -3,31 +3,34 @@ namespace AdventOfCode;
 public readonly struct Round
 {
     public Plays OpponentPlay { get; init; }
-    public Plays RecommendedPlay { get; init; }
+    public Outcomes RecommendedOutcome { get; init; }
 
-    public int PlayValue => (RecommendedPlay) switch
+    public Plays MyPlay()
     {
-        (Plays.Rock) => 1,
-        (Plays.Paper) => 2,
-        (Plays.Scissor) => 3,
+        return (OpponentPlay, RecommendedOutcome) switch
+        {
+            (_, Outcomes.Draw) => OpponentPlay,
+            (Plays.Scissor, Outcomes.Win) => Plays.Rock,
+            (Plays.Paper, Outcomes.Win) => Plays.Scissor,
+            (Plays.Rock, Outcomes.Win) => Plays.Paper,
+            (Plays.Scissor, Outcomes.Loss) => Plays.Paper,
+            (Plays.Paper, Outcomes.Loss) => Plays.Rock,
+            (Plays.Rock, Outcomes.Loss) => Plays.Scissor,
+            _ => throw new InvalidOperationException()
+        };
+    }
+
+    public int PlayValue => MyPlay() switch
+    {
+        Plays.Rock => 1,
+        Plays.Paper => 2,
+        Plays.Scissor => 3,
         _ => 0
     };
-    
-    public Plays? Winner  =>
-        (RecommendedPlay, OpponentPlay) switch
-        {
-            (Plays.Rock, Plays.Scissor) => Plays.Rock,
-            (Plays.Scissor, Plays.Rock) => Plays.Rock,
-            (Plays.Rock, Plays.Paper) => Plays.Paper,
-            (Plays.Paper, Plays.Rock) => Plays.Paper,
-            (Plays.Scissor, Plays.Paper) => Plays.Scissor,
-            (Plays.Paper, Plays.Scissor) => Plays.Scissor,
-            _ => null
-        };
 
-    public Round(Plays opponentPlay, Plays recommendedPlay)
+    public Round(Plays opponentPlay, Outcomes recommendedOutcome)
     {
         OpponentPlay = opponentPlay;
-        RecommendedPlay = recommendedPlay;
+        RecommendedOutcome = recommendedOutcome;
     }
 }

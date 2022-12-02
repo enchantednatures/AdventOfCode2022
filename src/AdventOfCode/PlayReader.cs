@@ -2,23 +2,17 @@ namespace AdventOfCode;
 
 public static class PlayReader
 {
-
     public static Plays ReadInput(string input)
     {
-        switch (input)
+        return input switch
         {
-            case "A":
-            case "X":
-                return Plays.Rock;
-            case "B":
-            case "Y":
-                return Plays.Paper;
-                
-            case "C":
-            case "Z":
-                return Plays.Scissor;
-            default:
-                throw new Exception();
-        }
+            "A" => Plays.Rock,
+            "X" => Plays.Rock,
+            "B" => Plays.Paper,
+            "Y" => Plays.Paper,
+            "C" => Plays.Scissor,
+            "Z" => Plays.Scissor,
+            _ => throw new Exception()
+        };
     }
 }

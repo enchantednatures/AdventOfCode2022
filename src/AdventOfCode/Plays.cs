@@ -2,7 +2,7 @@ namespace AdventOfCode;
 
 public enum Plays
 {
-    Rock, 
-    Paper, 
+    Rock,
+    Paper,
     Scissor
 }

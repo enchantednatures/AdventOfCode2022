@@ -2,11 +2,6 @@ namespace AdventOfCode;
 
 public class InputDeserializer
 {
-    public InputDeserializer()
-    {
-        
-    }
-
     public Dictionary<int, List<int>> DeserializeLines(string[] input)
     {
         var currentGnome = 1;

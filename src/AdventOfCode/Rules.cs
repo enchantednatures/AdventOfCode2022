@@ -2,8 +2,9 @@ namespace AdventOfCode;
 
 public static class Rules
 {
-    public static Plays? GetWinner(Plays elf, Plays op) =>
-        (elf, op) switch
+    public static Plays? GetWinner(Plays elf, Plays op)
+    {
+        return (elf, op) switch
         {
             (Plays.Rock, Plays.Scissor) => Plays.Rock,
             (Plays.Scissor, Plays.Rock) => Plays.Rock,
@@ -13,4 +14,5 @@ public static class Rules
             (Plays.Paper, Plays.Scissor) => Plays.Scissor,
             _ => null
         };
+    }
 }
