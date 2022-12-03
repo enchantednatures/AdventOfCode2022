@@ -1,4 +1,4 @@
-namespace AdventOfCode;
+namespace AdventOfCode.Day2;
 
 public static class StrategyReader
 {

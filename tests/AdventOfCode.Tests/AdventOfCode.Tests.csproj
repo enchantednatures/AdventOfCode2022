@@ -24,4 +24,8 @@
             <TargetPath>%(RecursiveDir)/inputs/%(Filename)%(Extension)</TargetPath>
         </ContentWithTargetPath>
     </ItemGroup>
+    <ItemGroup>
+      <Content Include="inputs\day_3_dev.txt" />
+      <Content Include="inputs\day_3_prod.txt" />
+    </ItemGroup>
 </Project>

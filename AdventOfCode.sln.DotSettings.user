@@ -3,5 +3,6 @@
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::14A6489C-8564-465C-8677-1F944D1A7D82::net6.0::AdventOfCode.Tests.Tests.Test1&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::14A6489C-8564-465C-8677-1F944D1A7D82::net6.0::AdventOfCode.Tests.Tests.Day2&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::14A6489C-8564-465C-8677-1F944D1A7D82::net6.0::AdventOfCode.Tests.Tests.Day3&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
